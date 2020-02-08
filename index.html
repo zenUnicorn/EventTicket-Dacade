@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">  <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="list_events_href">Events
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="add_event_href">add Event
+            </a>
+          </li>
+          
+            
+      <!-- Links -->
+  
+    </div>
+    <!-- Collapsible content -->
+  </nav>
+
+
+  <!-- dd Event -->
+  <div class="text-center border border-light p-5" id="add_event_form">
+        <p class="h4 mb-4">Create Event</p>
+        <p>Join our mailing list. We write rarely, but only the best content.</p>
+        
+        <!-- Name -->
+        <input type="text" id="name" class="form-control mb-4" placeholder="Event Name">
+          <!-- Description -->
+        <div class="form-group">
+            <textarea id="description" class="form-control rounded-0" rows="3" placeholder="Message"></textarea>
+        </div>
+        <div class="md-form">
+                <input  type="date" id="date" class="form-control datepicker">
+                <label for="date-picker-example">Evend Date...</label>
+              </div>
+        <!-- Price -->
+        <div class="form-group">
+            <input type="number" id="price" class="form-control mb-4" placeholder="Event Price">
+        </div>
+        <!-- Sign in button -->
+        <button class="btn btn-info btn-block" type="button" id="addButton">Create Event</button>
+  </div>
+<div class="container" >
+    <div class="row">
+        <div class="col-md-8 mt-5" id="list_events">
+            <div id="getEvent">
+                  <!-- //render -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script id="template" type="x-tmpl-mustache">
+        {{#eventListArr}}
+        <div class="mb-3">
+                <div class="card card-cascade wider reverse">
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                      <img class="card-img-top" src="2327165.svg" alt="Card image cap">
+                      <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+                  
+                      <!-- Title -->
+                      <h4 class="card-title"><strong>{{name}}</strong></h4>
+                      <!-- Subtitle -->
+                      <h6 class="font-weight-bold indigo-text py-2">
+                          <button id="{{id}}" class="btn btn-info buyBtn" type="button">Get Ticket For {{price}} ae 
+                      </h6>
+                      <!-- Text -->
+                      <p class="card-text">
+                        {{description}}
+                     </p>
+                     Date:          
+                    <p class="card-text">
+                        {{event_date}}
+                    </p>                  
+                    </div>
+                  </div>
+                  <!-- Card -->
+              </div>
+    
+        {{/eventListArr }}
+    </script>
+  <!--/.Navbar-->
+ <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+  <!-- aeternity -->
+  <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
+  <!-- custom js -->
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
